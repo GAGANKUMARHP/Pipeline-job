@@ -10,9 +10,9 @@ agent {
       sh 'sleep 5'
     }
   }
-  stage('deploy') {
+  stage('test') {
     steps {
-      echo " new bild to deploy"
+      echo "test caes to be reviwed"
        sh 'sleep 5'
     }
   }

@@ -10,18 +10,12 @@ agent {
       sh 'sleep 5'
     }
   }
-
-}
- stages {
   stage('deploy') {
     steps {
       echo " new bild to deploy"
        sh 'sleep 5'
     }
   }
-
-}
-   stages {
   stage('deploy') {
     steps {
       echo " new build to deploy to QA"

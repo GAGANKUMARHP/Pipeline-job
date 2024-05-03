@@ -1,6 +1,8 @@
 pipeline
 {
-agent any;
+agent {
+  label 'newnode1'
+}
 stages {
   stage('c project') {
     steps {
@@ -9,7 +11,23 @@ stages {
   }
 }
 stages {
-  stage('new1') {
+  stage('build') {
+    steps {
+      // One or more steps need to be included within the steps block.
+    }
+  }
+
+}
+stages {
+  stage('deploy') {
+    steps {
+      // One or more steps need to be included within the steps block.
+    }
+  }
+
+}
+stages {
+  stage('test') {
     steps {
       // One or more steps need to be included within the steps block.
     }

@@ -34,10 +34,10 @@ agent any
              //steps {
                 //echo " new build to deploy to QA"
                 //sh 'sleep 5'
-      }
       
-    }
-  }
+      
 }
-}
+
+
+
 

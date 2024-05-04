@@ -1,8 +1,7 @@
 pipeline
 {
 agent none
- stages{
-  parallel{
+  stages{
     stage('build'){
      parallel{
       stage('NEW BUILD-1'){
@@ -13,9 +12,9 @@ agent none
             sleep 5
             exit 0
             '''
+             }
+        }
      
-         }
-     }
       stage('NEW BUILD-2'){
         agent{label 'master'}
         steps {
@@ -25,10 +24,10 @@ agent none
             exit 0
             '''
      
-         }
-      }
-    }
-  }
+          }
+       }
+     }
+   }
   stage('test'){
     parallel{
       stage( 'test on crome'){
@@ -79,6 +78,8 @@ agent none
       }
      }
     }
-   }
- }
+  }
 }
+
+
+

@@ -2,7 +2,7 @@ pipeline
 {
 agent none
  stages{
-  agent{'master'}
+  agent{label 'master'}
   stage('build'){
     parallel{
       stage('NEW BUILD-1'){

@@ -28,12 +28,12 @@ agent any
        }
     }
   }
-  stage('deploy') {
-    parallel{
-      stage('server1'){
-         steps {
-            echo " new build to deploy to QA"
-            sh 'sleep 5'
+      //stage('deploy') {
+        //parallel{
+          //stage('server1'){
+             //steps {
+                //echo " new build to deploy to QA"
+                //sh 'sleep 5'
       }
     }
   }

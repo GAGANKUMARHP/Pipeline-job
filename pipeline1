@@ -11,8 +11,8 @@ agent any
             '''
     }
   }
- }
-  stages('test'){
+ 
+  stage('test'){
     parallel{
       stage( 'test on crome'){
        steps {
@@ -28,6 +28,7 @@ agent any
        }
     }
   }
+}
 }
 
 

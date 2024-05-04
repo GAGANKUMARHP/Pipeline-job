@@ -5,7 +5,7 @@ agent any
   stage('build'){
     parallel{
       stage('NEW BUILD-1'){
-        agent{'newnode1'}
+        agent{'label-1'}
         steps {
           echo " new code for BUILD-1"
           sh '''

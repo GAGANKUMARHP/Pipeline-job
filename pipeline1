@@ -1,12 +1,11 @@
 pipeline
 {
-agent none
+agent any
  stages{
-  parallel{
-    stage('build'){
-     parallel{
+  stage('build'){
+    parallel{
       stage('NEW BUILD-1'){
-        agent{ label 'label-1'}
+        agent{'label-1'}
         steps {
           echo " new code for BUILD-1"
           sh '''
@@ -17,7 +16,6 @@ agent none
          }
      }
       stage('NEW BUILD-2'){
-        agent{label 'master'}
         steps {
           echo " new code for BUILD-2"
           sh '''
@@ -32,47 +30,40 @@ agent none
   stage('test'){
     parallel{
       stage( 'test on crome'){
-        agent {label 'master'}
        steps {
           echo "this is test on crome"
           sh 'sleep 5'    
        }
       }
       stage( 'test on safari'){
-        agent{label 'master'}
        steps {
           echo "this is test on safari"
           sh 'sleep 5'   
       }
        }
     }
-   } 
   }
   stage('deploy'){
     parallel {
       stage('server1') {
-        agent{label 'label-1'}
        steps {
        echo " deploy it on server 1"
        sh 'sleep 5'
       }
      }
     stage('server2') {
-       agent{label 'label-1'}
        steps {
        echo " deploy it on server 2"
        sh 'sleep 5'
       }
      }
      stage('server3') {
-       agent{label 'label-1'}
        steps {
        echo " deploy it on server 3"
        sh 'sleep 5'
       }
      }
     stage('server4') {
-       agent{label 'label-1'}
        steps {
        echo " deploy it on server 4"
        sh 'sleep 5'

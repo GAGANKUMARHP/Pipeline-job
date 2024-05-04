@@ -1,9 +1,9 @@
 pipeline
 {
-agent none
+agent any
  stages{
-  agent{'master'}
   stage('build'){
+    //agent{'master'}
     parallel{
       stage('NEW BUILD-1'){
         steps {

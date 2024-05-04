@@ -1,9 +1,9 @@
 pipeline
 {
-agent any
+agent none
  stages{
   stage('build'){
-    //agent{'master'}
+    agent{'master'}
     parallel{
       stage('NEW BUILD-1'){
         steps {
@@ -16,6 +16,7 @@ agent any
          }
      }
       stage('NEW BUILD-2'){
+        agent {'newnode1'}
         steps {
           echo " new code for BUILD-2"
           sh '''
@@ -28,6 +29,7 @@ agent any
     }
   }
   stage('test'){
+    agent {'newnode1'}
     parallel{
       stage( 'test on crome'){
        steps {
@@ -44,6 +46,7 @@ agent any
     }
   }
   stage('deploy'){
+    agent {'master'}
     parallel {
       stage('server1') {
        steps {

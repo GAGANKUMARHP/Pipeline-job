@@ -28,9 +28,36 @@ agent any
        }
     }
   }
+  stage('deploy'){
+    parallel {
+      stage('server1') {
+       steps {
+       echo " deploy it on server 1"
+       sh 'sleep 5'
+      }
+     }
+    stage('server2') {
+       steps {
+       echo " deploy it on server 2"
+       sh 'sleep 5'
+      }
+     }
+     stage('server3') {
+       steps {
+       echo " deploy it on server 3"
+       sh 'sleep 5'
+      }
+     }
+    stage('server4') {
+       steps {
+       echo " deploy it on server 4"
+       sh 'sleep 5'
+      }
+     }
+    }
+   }
+ }
 }
-}
-
 
 
 

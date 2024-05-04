@@ -12,9 +12,9 @@ agent none
             sleep 5
             exit 0
             '''
+             }
+        }
      
-         }
-     }
       stage('NEW BUILD-2'){
         agent{label 'master'}
         steps {
@@ -24,10 +24,10 @@ agent none
             exit 0
             '''
      
-         }
-      }
-    }
-  
+          }
+       }
+     }
+   }
   stage('test'){
     parallel{
       stage( 'test on crome'){

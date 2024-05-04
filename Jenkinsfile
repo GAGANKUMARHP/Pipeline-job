@@ -2,7 +2,8 @@ pipeline
 {
 agent none
  stages {
-  stage('build') {
+  stage('build'){
+    }
     agent any
     steps {
       echo " new code for build"

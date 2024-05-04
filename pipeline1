@@ -1,6 +1,6 @@
 pipeline
 {
-agent any
+agent none
  stages{
   stage('build'){
     parallel{
@@ -16,6 +16,7 @@ agent any
          }
      }
       stage('NEW BUILD-2'){
+        agent{label 'master'}
         steps {
           echo " new code for BUILD-2"
           sh '''
@@ -30,12 +31,14 @@ agent any
   stage('test'){
     parallel{
       stage( 'test on crome'){
+        agent {label 'master'}
        steps {
           echo "this is test on crome"
           sh 'sleep 5'    
        }
       }
       stage( 'test on safari'){
+        agent{label 'master'}
        steps {
           echo "this is test on safari"
           sh 'sleep 5'   

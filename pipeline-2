@@ -1,8 +1,6 @@
 pipeline
 {
 agent any
-parallel {
-agent none
   stages{
     stage('build'){
      parallel{
@@ -16,18 +14,6 @@ agent none
             '''
              }
         }
-     
-      stage('NEW BUILD-2'){
-        agent{label 'master'}
-        steps {
-          echo " new code for BUILD-2"
-          sh '''
-            sleep 5
-            exit 0
-            '''
-     
-          }
-       }
      }
    }
   stage('test'){
@@ -82,7 +68,7 @@ agent none
     }
   }
 }
-}
+
 
 
 

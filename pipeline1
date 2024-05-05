@@ -14,8 +14,8 @@ parameters {
  stages {
   stage('build'){
     steps {
-       echo "deplyoing to ${params.ENV}"
-       echo " code ${params.BRANCH} Branch"
+      //  echo "deplyoing to ${params.ENV}"
+      //  echo " code ${params.BRANCH} Branch"
          
          sh '''
           echo " deploying to ${deploy_env} "

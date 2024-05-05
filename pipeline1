@@ -18,7 +18,7 @@ parameters {
       //  echo " code ${params.BRANCH} Branch"
          
          sh '''
-          echo " deploying to ${deploy_env} "
+          echo " deploying to ${deploy_env} branch "
           echo " code from ${deploy_branch} branch"  
            exit 0
             '''

@@ -10,8 +10,8 @@ parameters {
  stages {
   stage('build'){
       environment{
-        deploy-branch = ${params.BRANCH}
-        deploy-env =$[params.ENV]
+        deploy_branch = ${params.BRANCH}
+        deploy_env =$[params.ENV]
       }
 
 

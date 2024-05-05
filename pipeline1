@@ -6,23 +6,22 @@ parameters {
   string defaultValue: 'TEST', description: 'giving environment variable', name: 'ENV', trim: true
   choice choices: ['main', 'master '], description: 'giving environment variable', name: 'BRANCH'}
 
-
+        environment{
+            deploy_branch = "$BRANCH"
+            deploy_env ="$ENV"
+       }
+ 
  stages {
   stage('build'){
-      environment{
-        deploy_branch = ${params.BRANCH}
-        deploy_env =$[params.ENV]
-      }
-
-
     steps {
-      echo "deplyoing to ${params.ENV}"
-      echo " code ${params.BRANCH} Branch"
-         //echo " new code for build"
-          // sh '''
-          //   sleep 5
-          //  exit 0
-          //   '''
+       echo "deplyoing to ${params.ENV}"
+       echo " code ${params.BRANCH} Branch"
+         
+         sh '''
+          echo " deploying to ${deploy_env} "
+          echo " code from ${deploy_branch} branch"  
+           exit 0
+            '''
     }
   }
  }

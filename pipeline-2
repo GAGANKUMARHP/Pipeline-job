@@ -1,23 +1,23 @@
 
 pipeline
 {
+   parallel{
   agent any
-  // parallel{
-  stages {
-    stage('build') {
-      parallel {
-        stage('NEW BUILD-1') {
-          agent { label 'label-1' }
-          steps {
-            echo ' new code for BUILD-1'
-            sh '''
-            sleep 5
-            exit 0
-            '''
-          }
+    stages {
+     stage('build') {
+       parallel {
+          stage('NEW BUILD-1') {
+            agent { label 'label-1' }
+              steps {
+                echo ' new code for BUILD-1'
+                sh '''
+                    sleep 5
+                    exit 0
+                   '''
+               }
+           }
         }
-      }
-    }
+     }
     stage('test') {
       parallel {
         stage('test on crome') {
@@ -69,4 +69,5 @@ pipeline
   //     }
   //   }
   // }
+}
 }

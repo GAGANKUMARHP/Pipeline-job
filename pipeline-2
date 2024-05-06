@@ -2,7 +2,7 @@
 pipeline
 {
   agent any
-  parallel{
+  // parallel{
   stages {
     stage('build') {
       parallel {
@@ -69,5 +69,4 @@ pipeline
   //     }
   //   }
   // }
-}
 }

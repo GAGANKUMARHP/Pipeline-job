@@ -1,0 +1,25 @@
+pipeline 
+{
+    agent none
+    parallel{
+        
+        stages{
+            stage('build_name'){
+                agent { label 'label_name' }
+                echo "this is new script "
+            }
+            
+            stage( 'build_name'){
+                agent { label 'lable_name '}
+
+            }
+
+
+
+        }
+
+    }
+
+
+
+}

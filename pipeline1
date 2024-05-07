@@ -1,29 +1,29 @@
 
 pipeline
 {
-  agent any
-  parameters{
-    string defaultValue: 'TEST', description: 'giving environment variable', name: 'ENV', trim: true
-    choice choices: ['main', 'master '], description: 'giving environment variable', name: 'BRANCH'}
+    agent any
+    parameters{
+        string defaultValue: 'TEST', description: 'giving environment variable', name: 'ENV', trim: true
+        choice choices: ['main', 'master '], description: 'giving environment variable', name: 'BRANCH'}
 
-  environment {
-    deploy_branch = "$BRANCH"
-    deploy_env = "$ENV"
-  }
+    environment {
+        deploy_branch = "$BRANCH"
+        deploy_env = "$ENV"
+    }
 
-  stages {
-    stage('build') {
-      steps {
+    stages {
+        stage('build') {
+            steps {
       //  echo "deplyoing to ${params.ENV}"
       //  echo " code ${params.BRANCH} Branch"
 
-        sh '''
+                sh '''
           echo " deploying to ${deploy_env} branch "
           echo " code from ${deploy_branch} branch"
            exit 0
             '''
-      }
+            }
+        }
     }
-  }
 }
 

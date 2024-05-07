@@ -1,16 +1,14 @@
 pipeline 
 {
     agent none
-    stages{
-        while (' stage == master ' );do
-        stage('master'){
-            steps{
-
-                echo" run this stage in master "
-            }
-        }
-        done
+  stage('Stage 1') {
+    agent any {
+      if (isMaster()) {
+        return 'master' // Only run on master node
+      }
     }
-
+   
+    
+  }
 
 }

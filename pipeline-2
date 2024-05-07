@@ -1,14 +1,16 @@
+/* groovylint-disable TrailingWhitespace */
 pipeline 
 {
     agent none
-  stage('Stage 1') {
-    agent any {
-      if (isMaster()) {
+    stages{
+     stage('Stage 1') {
+       agent any {
+        if (isMaster()) {
         return 'master' // Only run on master node
-      }
-    }
+        }
+       }
    
-    
-  }
+     }
+    }
 
 }

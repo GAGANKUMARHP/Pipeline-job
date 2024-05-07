@@ -2,7 +2,7 @@ pipeline
 {
     agent none
     stages{
-        while [' stage == master ' ];do
+        while (' stage == master ' );do
         stage('master'){
             steps{
 

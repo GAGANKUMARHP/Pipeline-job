@@ -5,7 +5,6 @@ pipeline
     stages {
         stage('build') {
           when {
-            /* groovylint-disable-next-line Indentation */
             branch 'B2'
           }
           steps {

@@ -1,16 +1,16 @@
-/* groovylint-disable TrailingWhitespace */
 pipeline 
 {
     agent none
     stages{
-     stage('Stage 1') {
-       agent any {
-        if (isMaster()) {
-        return 'master' // Only run on master node
+        stage('master'){
+          when {
+            branch 'master'
+          }
+            steps{
+               echo" run this stage in master "
+            }
         }
-       }
-   
-     }
+        done
     }
 
 }

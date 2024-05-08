@@ -3,7 +3,7 @@ pipeline
 {
     agent none
     stages {
-        stage('master') {
+        stage('build') {
           when {
             /* groovylint-disable-next-line Indentation */
             branch 'B1'

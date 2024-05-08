@@ -6,7 +6,7 @@ pipeline
         stage('build') {
           when {
             /* groovylint-disable-next-line Indentation */
-            branch 'B1'
+            branch 'B2'
           }
           steps {
         echo' run this stage in master '
